@@ -31,3 +31,8 @@ document.querySelector('.prev').addEventListener('click', () => {
     if (index < 0) index = items.length - 1;
     track.style.transform = `translateX(-${index * 100}%)`;
 });
+
+window.addEventListener("scroll", () => {
+    navLinks.classList.remove("active");
+    burger.classList.remove("active");
+});

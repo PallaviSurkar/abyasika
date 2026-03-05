@@ -15,16 +15,29 @@
     font-family: 'Poppins', sans-serif;
 }
 
+html, body {
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+/* body {
+    background-color: var(--white);
+    color: var(--dark);
+    scroll-behavior: smooth;
+} */
+
 body {
     background-color: var(--white);
     color: var(--dark);
     scroll-behavior: smooth;
+    overflow-x: hidden;
 }
 
 .container {
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 20px;
+     width:100%;
 }
 
 /* Navbar */
@@ -109,6 +122,11 @@ body {
     text-align: center;
     position: relative;
     color: white;
+    min-height: 100vh;
+    width:100%;
+   max-width:100%;
+    overflow:hidden;
+     
 }
 
 .hero-overlay {
@@ -224,6 +242,8 @@ body {
     position: relative;
     overflow: hidden;
     max-width: 100%;
+    overflow:hidden;
+width:100%;
 }
 
 .gallery-track {
@@ -263,6 +283,10 @@ body {
 
 /* Desktop la grid pahije asel tar */
 @media (min-width: 768px) {
+     .hero{
+    background-attachment: fixed;
+  }
+
     .gallery-track {
         display: grid;
         grid-template-columns: repeat(4, 1fr);
@@ -307,9 +331,11 @@ body {
 .contact-map { flex: 1; min-height: 400px; }
 .contact-map iframe { width: 100%; height: 100%; border: 0; }
 
+
+
 /* Floating WhatsApp */
 .whatsapp-float {
-    position: fixed !important;
+    position: fixed ;
     bottom: 30px;
     right: 30px;
     background: #25d366;
@@ -317,20 +343,24 @@ body {
     width: 60px;
     height: 60px;
     border-radius: 50%;
-    display: flex;
+    display: flex !important;
     align-items: center;
     justify-content: center;
     font-size: 30px;
     box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-    z-index: 1000;
+    z-index: 9999;
     /* animation: pulse 2s infinite; */
 }
 
-/* @keyframes pulse {
+@keyframes pulse {
     0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7); }
     70% { box-shadow: 0 0 0 15px rgba(37, 211, 102, 0); }
     100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
-} */
+}
+    .whatsapp-float{
+ animation:pulse 2s infinite;
+}
+
 
 .footer {
     background: #111;
@@ -360,11 +390,12 @@ body {
         background: var(--primary);
          margin: 5px; transition: 0.3s;
     }
-}
+
+  
+
+   
 
 
-/* ===== Mobile Contact Section Fix ===== */
-@media (max-width: 768px) {
 
     .contact-wrapper {
         flex-direction: column;
@@ -390,8 +421,8 @@ body {
         border-radius: 10px;
         height: 300px;
     }
-}
-@media (max-width: 768px) {
+
+
 
     .nav-links {
         position: absolute;
@@ -450,5 +481,6 @@ body {
         bottom: 15px;
         right: 15px;
         display: flex !important;
+        
     }
 }
